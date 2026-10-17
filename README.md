@@ -18,7 +18,7 @@ The lamp uses an ESP32-S0WD-OEM with 4 MB flash.
 
 ## Status
 
-The port is functional and has been tested on real hardware by real people.  Is this real or fantasy
+The port is functional and has been tested on real hardware by real people. Is this real or fantasy.
 
 Known limitation:
 
@@ -40,9 +40,9 @@ Known limitation:
 | EEPROM SDA | 17 |
 | EEPROM SCL | 18 |
 
-## Source
+## Source and attribution
 
-The implementation is based on Tasmota and on the reverse engineering work by Maurice Makaay for the ESPHome Xiaomi Bedside Lamp 2 project.
+This implementation is based on Tasmota and on the reverse-engineering work by Maurice Makaay for the ESPHome Xiaomi Bedside Lamp 2 project.
 
 Tasmota:
 
@@ -52,9 +52,37 @@ ESPHome Xiaomi Bedside Lamp 2:
 
 https://github.com/mmakaay/esphome-xiaomi_bslamp2
 
+The Tasmota-specific driver, light integration, build configuration, and adaptation for the Xiaomi Mijia Bedside Lamp 2 are provided by this project.
+
 ## Tasmota base version
 
-This build was developed against Tasmota commit:
+This build was developed and tested against Tasmota commit:
 
 ```text
 68157a26297af6e20564b199cdddf47b4242dbfa
+
+##Supported Hardware
+
+Xiaomi Mijia Bedside Lamp 2
+Model: MJCTD02YL
+SoC: ESP32-S0WD-OEM
+Flash: 4 MB
+Flash mode: DIO
+Flash frequency: 40 MHz
+CPU: single-core ESP32
+
+##Build target
+
+tasmota32-xiaomi-bslamp2
+tasmota32solo1
+
+##Source Files
+
+source/
+├── platformio_override.ini
+├── platformio_tasmota_cenv.ini
+├── user_config_override.h
+├── xdrv_124_xiaomi_bslamp2.ino
+├── xiaomi_bslamp2.h
+├── xiaomi_bslamp2_light.h
+└── xlgt_12_xiaomi_bslamp2.ino
